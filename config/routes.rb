@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
   #get 'home/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'home#index'
-  get 'about' => 'pages#about'
-  resources :posts
+  get 'home/about'
+  #get 'about' => 'pages#about'
+  #resources :posts
 end
