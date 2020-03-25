@@ -1,7 +1,7 @@
 <div class="col-md-6 offset-md-3">
   <div class="jumbotron">
     <h1>Inicio de sesión</h1>
-  </br>
+    </br>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
       <div class="field">
@@ -13,22 +13,33 @@
         <%= f.label :Contraseña %><br />
         <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
       </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :recordar %>
-        </div>
-      <% end %>
-
-      <div class="actions">
-        <%= f.submit "Iniciar Sesión", class: "btn btn-primary" %>
+    </br>
+        <div class="row align-items-center justify-content-center">
+          <div class="col-3">
+            <div class="actions">
+              <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :recordar %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="actions">
+              <%= f.submit "Iniciar Sesión", class: "btn btn-primary" %>
+            </div>
+          </div>
+          <% end %>
       </div>
-    </div>
-    <% end %>
-    <center>
-      <%= render "devise/shared/links" %>
-    </center>
-    
+    </br>
+      <div class="row align-items-center justify-content-center">
+        <div class="col-8">
+          <center>
+            <%= render "devise/shared/links" %>
+          </center>
+        </div>
+      </div>
   </div>
 </div>
+
